@@ -28,10 +28,21 @@ Implement an User Authentication System in order to access the jokes from the Jo
 
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-1. What is the purpose of using _sessions_?
-1. What does bcrypt do to help us store passwords in a secure manner.
-1. What does bcrypt do to slow down attackers?
-1. What are the three parts of the JSON Web Token?
+1.  What is the purpose of using sessions?
+
+Sessions are a way of verifying a user’s identity to authorize their access to certain portions of a website. A session is created when the user logs in (initially verifies their identity) and is valid for a period of time. The session has an ID that it will check for on the cookie being passed with each request from the client. If the server ID matches, the user is verified and continues to have access. The session is stored on the server, not with the client.
+
+2.  What does bcrypt do to help us store passwords in a secure manner.
+
+Bcrypt allows us to hash passwords and other sensitive user data before storing it within our database, to ensure that any breach into our database does not give the hacker access to that sensitive data. Bcrypt also has built in methods to compare a user’s attempted login password to the hashed password on the database, without revealing the sensitive information.
+
+3.  What does bcrypt do to slow down attackers?
+
+Bcrypt slows down hackers in a few ways. First, its hashing method is a one way function, so a hacker cannot use Bcrypt in reverse to de-hash sensitive data, even if they have access to the database. Bcrypt also uses salt when hashing sensitive data - which adds random data to the user input to make it even more difficult to de-code. Bcrypt also has a built in parameter to ensure that passwords are of a certain length before being hashed, to provide greater security for the user.
+
+4.  What are the three parts of the JSON Web Token?
+
+A JSON web token contains three main parts: the header, the payload and the signature. The header contains the algorithm type and that the token is JWT type. The payload contains user information and additional data, such as the subject, expiration, or roles. Finally, the signature is created by running the header’s specified algorithm on the header, payload and with a secret to create a unique signature that verifies that user’s identity as valid. In its entirety, the JSON web token is made up of those three strings that will be sent with the header on each client side request.
 
 ## Project Set Up
 

@@ -6,10 +6,7 @@
   "scripts": {
     "server": "nodemon index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/LambdaSchool/Sprint-Challenge-Authentication.git"
-  },
+  "repository": "git+https://github.com/LambdaSchool/Sprint-Challenge-Authentication.git",
   "keywords": [],
   "author": "Lambda School",
   "license": "ISC",
